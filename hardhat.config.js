@@ -20,14 +20,16 @@ const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY;
 
 module.exports = {
   solidity: "0.8.4",
-  rinkeby: {
-    url: RINKEBY_RPC_URL,
-    accounts: PRIVATE_KEY !== undefined ? [PRIVATE_KEY] : [],
-    //   accounts: {
-    //     mnemonic: MNEMONIC,
-    //   },
-    saveDeployments: true,
-    chainId: 4,
+  networks: {
+    rinkeby: {
+      url: RINKEBY_RPC_URL,
+      accounts: PRIVATE_KEY !== undefined ? [PRIVATE_KEY] : [],
+      //   accounts: {
+      //     mnemonic: MNEMONIC,
+      //   },
+      saveDeployments: true,
+      chainId: 4,
+    },
   },
   etherscan: {
     // pnpm hardhat verify --network <NETWORK> <CONTRACT_ADDRESS> <CONSTRUCTOR_PARAMETERS>
